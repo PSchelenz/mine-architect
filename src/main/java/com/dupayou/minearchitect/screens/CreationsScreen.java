@@ -1,6 +1,9 @@
 package com.dupayou.minearchitect.screens;
 
 import com.dupayou.minearchitect.MineArchitect;
+import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.model.CreationBlock;
+import com.dupayou.minearchitect.states.CreationPlacementState;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -18,6 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 
@@ -25,44 +29,45 @@ import java.util.Map;
 
 public class CreationsScreen extends Screen {
     private static final Component TITLE = Component.translatable("gui." + MineArchitect.MOD_ID + ".creations_screen.title");
-    private static final Component EX_BUTTON_TEXT = Component.translatable("gui." + MineArchitect.MOD_ID + ".creations_screen.buttons.ex");
-
     private static final ResourceLocation TEXTURE = new ResourceLocation(MineArchitect.MOD_ID, "textures/gui/creations_screen.png");
 
     private final int imageWidth, imageHeight;
-
     private int leftPos, topPos;
-    private Button button;
-
     private float rotationAngle = 0;
-
-    private final Map<BlockPos, ItemStack> structure;
     private float rotationX = 30f;
     private float rotationY = 45f;
     private float scale = 30f;
+    private final int currentPage;
+    private final Screen parent;
 
-    public CreationsScreen(Map<BlockPos, ItemStack> structure) {
+    private final Creation creation;
+
+    public CreationsScreen(Creation creation, Screen parent, int currentPage) {
         super(TITLE);
 
         this.imageWidth = 176;
         this.imageHeight = 166;
-        this.structure = structure;
+        this.currentPage = currentPage;
+        this.parent = parent;
+        this.creation = creation;
     }
 
     @Override
     protected void init() {
         super.init();
-
         this.leftPos = (this.width - this.imageWidth) / 2;
         this.topPos = (this.height - this.imageHeight) / 2;
 
+        addRenderableWidget(Button.builder(Component.literal("Back"), button -> {
+            if (parent instanceof GridCreationsListScreen listScreen) {
+                minecraft.setScreen(new GridCreationsListScreen(currentPage));
+            }
+        }).bounds(10, 10, 50, 20).build());
 
-//        this.button = addRenderableWidget(
-//                Button.builder(EX_BUTTON_TEXT, this::handleExampleButton)
-//                        .bounds(this.leftPos + 8, this.topPos + 20, 100, 20)
-//                        .tooltip(Tooltip.create(EX_BUTTON_TEXT))
-//                        .build()
-//        );
+        addRenderableWidget(Button.builder(Component.literal("Use"), button -> {
+            CreationPlacementState.setActiveCreation(creation);
+            minecraft.setScreen(null);
+        }).bounds(width - 60, 10, 50, 20).build());
     }
 
     @Override
@@ -73,7 +78,6 @@ public class CreationsScreen extends Screen {
 
         // Handle rotation
         if (this.minecraft.mouseHandler.isLeftPressed()) {
-            MineArchitect.LOGGER.info("Mouse moved to pos: " + this.minecraft.mouseHandler.xpos() + ", " + this.minecraft.mouseHandler.ypos());
             rotationY += this.minecraft.mouseHandler.xpos() * 0.5f;
             rotationX -= this.minecraft.mouseHandler.ypos() * 0.5f;
         }
@@ -102,25 +106,35 @@ public class CreationsScreen extends Screen {
         RenderSystem.enableDepthTest();
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        Vector3f center = new Vector3f();
-        for (BlockPos pos : structure.keySet()) {
-            center.add(new Vector3f(pos.getX(), pos.getY(), pos.getZ()));
-        }
-        center.div(structure.size());
+        BlockPos size = creation.getSize();
+        Vector3f center = new Vector3f(size.getX() / 2f, size.getY() / 2f, size.getZ() / 2f);
 
         ItemRenderer itemRenderer = this.minecraft.getItemRenderer();
-        for (Map.Entry<BlockPos, ItemStack> entry : structure.entrySet()) {
-            BlockPos relativePos = entry.getKey().subtract(new BlockPos((int)center.x(), (int)center.y(), (int)center.z()));
-            poseStack.pushPose();
-            poseStack.translate(relativePos.getX(), relativePos.getY(), relativePos.getZ());
-            poseStack.scale(2f, 2f, 2f);
-            itemRenderer.renderStatic(entry.getValue(), ItemDisplayContext.FIXED, 15728880, 655360, poseStack, graphics.bufferSource(), this.minecraft.level, 0);
-            poseStack.popPose();
+
+        for (int x = 0; x < size.getX(); x++) {
+            for (int y = 0; y < size.getY(); y++) {
+                for (int z = 0; z < size.getZ(); z++) {
+                    CreationBlock block = creation.getBlock(x, y, z);
+                    if (block.getBlockState().getBlock() != Blocks.AIR) {
+                        BlockPos relativePos = block.getRelativePos().subtract(
+                                new BlockPos((int)center.x(), (int)center.y(), (int)center.z()));
+
+                        poseStack.pushPose();
+                        poseStack.translate(relativePos.getX(), relativePos.getY(), relativePos.getZ());
+                        poseStack.scale(2f, 2f, 2f);
+
+                        ItemStack itemStack = block.getBlockState().getBlock().asItem().getDefaultInstance();
+                        itemRenderer.renderStatic(itemStack, ItemDisplayContext.FIXED, 15728880, 655360,
+                                poseStack, graphics.bufferSource(), this.minecraft.level, 0);
+
+                        poseStack.popPose();
+                    }
+                }
+            }
         }
 
         graphics.flush();
         RenderSystem.disableDepthTest();
-
         poseStack.popPose();
     }
 

@@ -6,8 +6,10 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -39,6 +41,10 @@ public class Creation {
         this.blocks[x][y][z] = block;
     }
 
+    public CreationBlock getBlock(int x, int y, int z) {
+        return this.blocks[x][y][z];
+    }
+
     public String getName() {
         return this.name;
     }
@@ -47,7 +53,7 @@ public class Creation {
         return this.size;
     }
 
-    public void placeCreation(Level level, BlockPos startingPos)
+    public void placeCreation(Level level, BlockPos startingPos, int rotation)
     {
         for (int y = 0; y < this.size.getY(); y++) {
             for (int z = 0; z < this.size.getZ(); z++) {
@@ -55,21 +61,55 @@ public class Creation {
                     CreationBlock block = this.blocks[x][y][z];
 
                     if (block.getBlockState().getBlock() != Blocks.AIR) {
-                        BlockState blockState = block.getBlockState();
-
-                        level.setBlock(
-                                new BlockPos(
-                                        startingPos.getX() + x,
-                                        startingPos.getY() + y,
-                                        startingPos.getZ() + z
-                                ),
-                                blockState,
-                                3
+                        BlockPos rotatedPos = rotatePosition(x, y, z, rotation);
+                        BlockState rotatedState = block.getBlockState().rotate(level, startingPos.offset(rotatedPos),
+                            switch(rotation) {
+                                case 1 -> Rotation.CLOCKWISE_90;
+                                case 2 -> Rotation.CLOCKWISE_180;
+                                case 3 -> Rotation.COUNTERCLOCKWISE_90;
+                                default -> Rotation.NONE;
+                            }
                         );
+
+                        level.setBlock(startingPos.offset(rotatedPos), rotatedState, 3);
                     }
                 }
             }
         }
+    }
+
+    private BlockPos rotatePosition(int x, int y, int z, int rotation) {
+        // Calculate center
+        double centerX = size.getX() / 2.0;
+        double centerZ = size.getZ() / 2.0;
+
+        // Translate to origin
+        double translatedX = x - centerX;
+        double translatedZ = z - centerZ;
+
+        // Rotate
+        double rotatedX = switch (rotation) {
+            case 0 -> translatedX;
+            case 1 -> -translatedZ;
+            case 2 -> -translatedX;
+            case 3 -> translatedZ;
+            default -> translatedX;
+        };
+
+        double rotatedZ = switch (rotation) {
+            case 0 -> translatedZ;
+            case 1 -> translatedX;
+            case 2 -> -translatedZ;
+            case 3 -> -translatedX;
+            default -> translatedZ;
+        };
+
+        // Translate back
+        return new BlockPos(
+            (int) Math.round(rotatedX + centerX),
+            y,
+            (int) Math.round(rotatedZ + centerZ)
+        );
     }
 
     public CompoundTag toNBT() {

@@ -37,7 +37,7 @@ public class MenuScreen extends Screen {
         int firstButtonY = topPos + 60;
 
         addRenderableWidget(Button.builder(CREATIONS_BUTTON, button -> {
-            minecraft.setScreen(new GridCreationsListScreen(this));
+            minecraft.setScreen(new GridCreationsListScreen(0));
         })
             .bounds(buttonX, firstButtonY, BUTTON_WIDTH, BUTTON_HEIGHT)
             .build());

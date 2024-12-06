@@ -1,8 +1,11 @@
 package com.dupayou.minearchitect;
 
+import com.dupayou.minearchitect.client.CreationPlacementHandler;
+import com.dupayou.minearchitect.client.CreationPreviewRenderer;
 import com.dupayou.minearchitect.data.CreationData;
 import com.dupayou.minearchitect.model.Creation;
 import com.dupayou.minearchitect.model.CreationBlock;
+import com.dupayou.minearchitect.network.NetworkHandler;
 import com.dupayou.minearchitect.screens.CreationsScreen;
 import com.dupayou.minearchitect.screens.MenuScreen;
 import com.dupayou.minearchitect.utils.JsonBlockLoader;
@@ -52,6 +55,8 @@ public class MineArchitect
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+
+        NetworkHandler.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -62,6 +67,8 @@ public class MineArchitect
     private void clientSetup(final FMLCommonSetupEvent event)
     {
         MinecraftForge.EVENT_BUS.addListener(this::onKeyInput);
+        MinecraftForge.EVENT_BUS.register(CreationPreviewRenderer.class);
+        MinecraftForge.EVENT_BUS.register(CreationPlacementHandler.class);
     }
 
     // Add the example block item to the building blocks tab
