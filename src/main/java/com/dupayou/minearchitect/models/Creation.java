@@ -1,17 +1,13 @@
-package com.dupayou.minearchitect.model;
+package com.dupayou.minearchitect.models;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class Creation {
     private String name;
@@ -53,25 +49,40 @@ public class Creation {
         return this.size;
     }
 
-    public void placeCreation(Level level, BlockPos startingPos, int rotation)
-    {
+    public void placeCreation(Level level, BlockPos startingPos, int rotation) {
+        int currentWidth = (rotation % 2 == 0) ? size.getX() : size.getZ();
+        int currentDepth = (rotation % 2 == 0) ? size.getZ() : size.getX();
+
+        float xOffset = -currentWidth / 2f + 1;  // Added +1 to correct the westward shift
+        float zOffset = -currentDepth / 2f;
+
+        xOffset += (currentWidth % 2 == 0) ? 0 : 0.5f;
+        zOffset += (currentDepth % 2 == 0) ? 0 : 0.5f;
+
+        startingPos = startingPos.offset((int)Math.floor(xOffset), 0, (int)Math.floor(zOffset));
+
         for (int y = 0; y < this.size.getY(); y++) {
             for (int z = 0; z < this.size.getZ(); z++) {
                 for (int x = 0; x < this.size.getX(); x++) {
                     CreationBlock block = this.blocks[x][y][z];
-
                     if (block.getBlockState().getBlock() != Blocks.AIR) {
-                        BlockPos rotatedPos = rotatePosition(x, y, z, rotation);
-                        BlockState rotatedState = block.getBlockState().rotate(level, startingPos.offset(rotatedPos),
-                            switch(rotation) {
-                                case 1 -> Rotation.CLOCKWISE_90;
-                                case 2 -> Rotation.CLOCKWISE_180;
-                                case 3 -> Rotation.COUNTERCLOCKWISE_90;
-                                default -> Rotation.NONE;
-                            }
+                        BlockPos pos = switch (rotation) {
+                            case 1 -> new BlockPos(z, y, size.getX() - 1 - x);
+                            case 2 -> new BlockPos(size.getX() - 1 - x, y, size.getZ() - 1 - z);
+                            case 3 -> new BlockPos(size.getZ() - 1 - z, y, x);
+                            default -> new BlockPos(x, y, z);
+                        };
+
+                        BlockState rotatedState = block.getBlockState().rotate(level, startingPos.offset(pos),
+                                switch(rotation) {
+                                    case 1 -> Rotation.CLOCKWISE_90;
+                                    case 2 -> Rotation.CLOCKWISE_180;
+                                    case 3 -> Rotation.COUNTERCLOCKWISE_90;
+                                    default -> Rotation.NONE;
+                                }
                         );
 
-                        level.setBlock(startingPos.offset(rotatedPos), rotatedState, 3);
+                        level.setBlock(startingPos.offset(pos), rotatedState, 3);
                     }
                 }
             }
@@ -79,16 +90,20 @@ public class Creation {
     }
 
     private BlockPos rotatePosition(int x, int y, int z, int rotation) {
-        // Calculate center
-        double centerX = size.getX() / 2.0;
-        double centerZ = size.getZ() / 2.0;
+        // Calculate center (same as preview renderer)
+        float centerX = size.getX() / 2.0f;
+        float centerZ = size.getZ() / 2.0f;
+
+        // Offset for odd dimensions
+        centerX -= (size.getX() % 2 == 0) ? 0.5f : 0;
+        centerZ -= (size.getZ() % 2 == 0) ? 0.5f : 0;
 
         // Translate to origin
-        double translatedX = x - centerX;
-        double translatedZ = z - centerZ;
+        float translatedX = x - centerX;
+        float translatedZ = z - centerZ;
 
         // Rotate
-        double rotatedX = switch (rotation) {
+        float rotatedX = switch (rotation) {
             case 0 -> translatedX;
             case 1 -> -translatedZ;
             case 2 -> -translatedX;
@@ -96,7 +111,7 @@ public class Creation {
             default -> translatedX;
         };
 
-        double rotatedZ = switch (rotation) {
+        float rotatedZ = switch (rotation) {
             case 0 -> translatedZ;
             case 1 -> translatedX;
             case 2 -> -translatedZ;
@@ -106,9 +121,9 @@ public class Creation {
 
         // Translate back
         return new BlockPos(
-            (int) Math.round(rotatedX + centerX),
-            y,
-            (int) Math.round(rotatedZ + centerZ)
+                Math.round(rotatedX + centerX),
+                y,
+                Math.round(rotatedZ + centerZ)
         );
     }
 

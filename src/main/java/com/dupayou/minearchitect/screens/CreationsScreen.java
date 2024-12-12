@@ -1,31 +1,23 @@
 package com.dupayou.minearchitect.screens;
 
 import com.dupayou.minearchitect.MineArchitect;
-import com.dupayou.minearchitect.model.Creation;
-import com.dupayou.minearchitect.model.CreationBlock;
+import com.dupayou.minearchitect.models.Creation;
+import com.dupayou.minearchitect.models.CreationBlock;
 import com.dupayou.minearchitect.states.CreationPlacementState;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
-
-import java.util.Map;
 
 public class CreationsScreen extends Screen {
     private static final Component TITLE = Component.translatable("gui." + MineArchitect.MOD_ID + ".creations_screen.title");

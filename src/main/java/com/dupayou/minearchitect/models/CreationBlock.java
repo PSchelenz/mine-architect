@@ -1,4 +1,4 @@
-package com.dupayou.minearchitect.model;
+package com.dupayou.minearchitect.models;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

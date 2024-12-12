@@ -1,6 +1,7 @@
 package com.dupayou.minearchitect.screens;
 
 import com.dupayou.minearchitect.MineArchitect;
+import com.dupayou.minearchitect.utils.JsonBlockLoader;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
@@ -47,6 +48,8 @@ public class MenuScreen extends Screen {
         })
             .bounds(buttonX, firstButtonY + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT)
             .build());
+
+        JsonBlockLoader.loadAndSaveCreations();
     }
 
     @Override

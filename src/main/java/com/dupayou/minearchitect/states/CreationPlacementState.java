@@ -1,6 +1,6 @@
 package com.dupayou.minearchitect.states;
 
-import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.models.Creation;
 
 public class CreationPlacementState {
     private static Creation activeCreation = null;

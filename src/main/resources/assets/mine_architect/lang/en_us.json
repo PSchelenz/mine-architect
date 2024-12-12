@@ -2,5 +2,6 @@
   "gui.mine_architect.menu_screen.title": "Mine Architect",
   "gui.mine_architect.menu_screen.buttons.creations": "Creations",
   "gui.mine_architect.menu_screen.buttons.something": "Something",
-  "gui.mine_architect.grid_creations_list_screen.title": "Creations"
+  "gui.mine_architect.grid_creations_list_screen.title": "Creations",
+  "item.mine_architect.architects_pencil": "Architect's Pencil"
 }

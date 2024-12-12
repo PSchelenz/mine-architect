@@ -1,6 +1,6 @@
 package com.dupayou.minearchitect.client;
 
-import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.models.Creation;
 import com.dupayou.minearchitect.network.NetworkHandler;
 import com.dupayou.minearchitect.network.PlaceCreationMessage;
 import com.dupayou.minearchitect.states.CreationPlacementState;

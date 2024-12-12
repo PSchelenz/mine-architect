@@ -2,7 +2,7 @@ package com.dupayou.minearchitect.screens;
 
 import com.dupayou.minearchitect.MineArchitect;
 import com.dupayou.minearchitect.data.CreationData;
-import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.models.Creation;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;

@@ -1,7 +1,7 @@
 package com.dupayou.minearchitect.data;
 
 import com.dupayou.minearchitect.MineArchitect;
-import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.models.Creation;
 import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

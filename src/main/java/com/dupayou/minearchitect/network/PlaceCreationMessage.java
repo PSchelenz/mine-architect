@@ -1,7 +1,7 @@
 package com.dupayou.minearchitect.network;
 
 import com.dupayou.minearchitect.data.CreationData;
-import com.dupayou.minearchitect.model.Creation;
+import com.dupayou.minearchitect.models.Creation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;

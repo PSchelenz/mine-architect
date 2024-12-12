@@ -1,15 +1,13 @@
 package com.dupayou.minearchitect.utils;
 
 import com.dupayou.minearchitect.data.CreationData;
-import com.dupayou.minearchitect.model.Creation;
-import com.dupayou.minearchitect.model.CreationBlock;
+import com.dupayou.minearchitect.models.Creation;
+import com.dupayou.minearchitect.models.CreationBlock;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

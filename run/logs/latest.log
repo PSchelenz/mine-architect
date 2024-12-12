@@ -1,87 +1,108 @@
-[06gru2024 19:19:43.626] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, /home/piotr/.gradle/caches/forge_gradle/assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[06gru2024 19:19:43.628] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Ubuntu; OS Linux arch amd64 version 5.15.0-119-generic
-[06gru2024 19:19:43.701] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[06gru2024 19:19:43.737] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[06gru2024 19:19:43.791] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[06gru2024 19:19:43.830] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/piotr/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23116!/ Service=ModLauncher Env=CLIENT
-[06gru2024 19:19:43.905] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 535.183.01, NVIDIA Corporation
-[06gru2024 19:19:44.016] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.3.10/7a15037366722893d76a3d0b2e9d1fd13a63a22d/javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[06gru2024 19:19:44.018] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.3.10/e67d9b3451d64ccc812cbbd33c066bd3ebbf2167/lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[06gru2024 19:19:44.019] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.3.10/2023f9726a509c5ba5a925cac934944066093de8/mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[06gru2024 19:19:44.020] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.3.10/523aa0cd9a773b2b56268d8689b2fb5c1f072941/fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
-[06gru2024 19:19:44.096] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[06gru2024 19:19:44.903] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, /home/piotr/.gradle/caches/forge_gradle/assets, --assetIndex, 5]
-[06gru2024 19:19:46.892] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 72 milliseconds
-[06gru2024 19:19:47.723] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/piotr/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1.jar%23181!/assets/.mcassetsroot' uses unexpected schema
-[06gru2024 19:19:47.723] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/piotr/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1.jar%23181!/data/.mcassetsroot' uses unexpected schema
-[06gru2024 19:19:47.731] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[06gru2024 19:19:47.734] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[06gru2024 19:19:47.788] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[06gru2024 19:19:47.935] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
-[06gru2024 19:19:47.935] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
-[06gru2024 19:19:48.451] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [mine_architect]
-[06gru2024 19:19:48.538] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[06gru2024 19:19:48.580] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[06gru2024 19:19:48.606] [Worker-Main-15/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[06gru2024 19:19:48.983] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.10 Target: 47.3.12
-[06gru2024 19:19:50.058] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[06gru2024 19:19:50.058] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[06gru2024 19:19:50.065] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device Wbudowany dźwięk Analogowe stereo
-[06gru2024 19:19:50.066] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[06gru2024 19:19:50.130] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[06gru2024 19:19:50.135] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[06gru2024 19:19:50.135] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[06gru2024 19:19:50.135] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[06gru2024 19:19:50.136] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[06gru2024 19:19:50.137] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[06gru2024 19:19:50.138] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[06gru2024 19:19:50.139] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[06gru2024 19:19:50.139] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[06gru2024 19:19:50.275] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[06gru2024 19:19:50.302] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[06gru2024 19:19:50.303] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[06gru2024 19:19:50.303] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[06gru2024 19:19:50.532] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[06gru2024 19:20:11.904] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
-[06gru2024 19:20:12.859] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[06gru2024 19:20:12.912] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[06gru2024 19:20:13.214] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[06gru2024 19:20:13.214] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[06gru2024 19:20:13.374] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[06gru2024 19:20:14.195] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[06gru2024 19:20:14.196] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[06gru2024 19:20:14.381] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 5%
-[06gru2024 19:20:14.666] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[06gru2024 19:20:14.670] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 1290 ms
-[06gru2024 19:20:14.720] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[06gru2024 19:20:14.721] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[06gru2024 19:20:14.765] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[06gru2024 19:20:15.075] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[06gru2024 19:20:15.106] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:b38a3218] logged in with entity id 1 at (-48.24718293934201, 56.0, -29.966626766822273)
-[06gru2024 19:20:15.121] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[06gru2024 19:20:15.487] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
-[06gru2024 19:20:29.819] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
-[06gru2024 19:20:29.820] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
-[06gru2024 19:20:30.522] [Render thread/INFO] [com.dupayou.minearchitect.data.CreationData/]: Loading creation from NBT: {Blocks:[{Block:"minecraft:stone",Properties:{},X:0,Y:0,Z:0},{Block:"minecraft:stone",Properties:{},X:0,Y:1,Z:0},{Block:"minecraft:stone",Properties:{},X:1,Y:0,Z:0},{Block:"minecraft:stone",Properties:{},X:1,Y:1,Z:0}],Name:"stonewall",SizeX:2,SizeY:2,SizeZ:1}
-[06gru2024 19:20:30.567] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[06gru2024 19:20:30.570] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[06gru2024 19:20:30.573] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[06gru2024 19:20:30.573] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[06gru2024 19:20:57.966] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[06gru2024 19:20:57.968] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[06gru2024 19:20:57.969] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[06gru2024 19:20:57.969] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[06gru2024 19:20:58.668] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[06gru2024 19:20:58.668] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[06gru2024 19:20:58.670] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[06gru2024 19:20:58.717] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[06gru2024 19:20:58.717] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[06gru2024 19:20:58.717] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[06gru2024 19:20:58.901] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[06gru2024 19:20:58.915] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[06gru2024 19:20:58.916] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[06gru2024 19:20:58.928] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World): All chunks are saved
-[06gru2024 19:20:58.929] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[06gru2024 19:20:58.929] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[06gru2024 19:20:58.929] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[06gru2024 19:21:00.372] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[12gru2024 17:58:35.335] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, /home/piotr/.gradle/caches/forge_gradle/assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
+[12gru2024 17:58:35.337] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Ubuntu; OS Linux arch amd64 version 5.15.0-119-generic
+[12gru2024 17:58:35.399] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[12gru2024 17:58:35.437] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[12gru2024 17:58:35.480] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[12gru2024 17:58:35.522] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/home/piotr/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23116!/ Service=ModLauncher Env=CLIENT
+[12gru2024 17:58:35.538] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 535.183.01, NVIDIA Corporation
+[12gru2024 17:58:35.698] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.3.10/7a15037366722893d76a3d0b2e9d1fd13a63a22d/javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12gru2024 17:58:35.699] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/lowcodelanguage/1.20.1-47.3.10/e67d9b3451d64ccc812cbbd33c066bd3ebbf2167/lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12gru2024 17:58:35.700] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/mclanguage/1.20.1-47.3.10/2023f9726a509c5ba5a925cac934944066093de8/mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12gru2024 17:58:35.701] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file /home/piotr/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlcore/1.20.1-47.3.10/523aa0cd9a773b2b56268d8689b2fb5c1f072941/fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
+[12gru2024 17:58:35.751] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[12gru2024 17:58:36.478] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, /home/piotr/.gradle/caches/forge_gradle/assets, --assetIndex, 5]
+[12gru2024 17:58:38.451] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 89 milliseconds
+[12gru2024 17:58:39.406] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/piotr/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1.jar%23181!/assets/.mcassetsroot' uses unexpected schema
+[12gru2024 17:58:39.406] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/piotr/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1.jar%23181!/data/.mcassetsroot' uses unexpected schema
+[12gru2024 17:58:39.415] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[12gru2024 17:58:39.418] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[12gru2024 17:58:39.475] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[12gru2024 17:58:39.609] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
+[12gru2024 17:58:39.609] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
+[12gru2024 17:58:40.105] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [mine_architect]
+[12gru2024 17:58:40.186] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[12gru2024 17:58:40.263] [Worker-Main-12/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[12gru2024 17:58:40.258] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[12gru2024 17:58:40.708] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.10 Target: 47.3.12
+[12gru2024 17:58:41.876] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[12gru2024 17:58:41.876] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[12gru2024 17:58:41.883] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device Wbudowany dźwięk Analogowe stereo
+[12gru2024 17:58:41.884] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[12gru2024 17:58:41.946] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[12gru2024 17:58:41.951] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[12gru2024 17:58:41.952] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[12gru2024 17:58:41.952] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[12gru2024 17:58:41.952] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[12gru2024 17:58:41.954] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[12gru2024 17:58:41.955] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[12gru2024 17:58:41.955] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[12gru2024 17:58:41.955] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[12gru2024 17:58:42.091] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[12gru2024 17:58:42.115] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[12gru2024 17:58:42.116] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[12gru2024 17:58:42.116] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[12gru2024 17:58:42.339] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[12gru2024 17:58:48.503] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[12gru2024 17:58:49.452] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[12gru2024 17:58:49.505] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
+[12gru2024 17:58:49.796] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[12gru2024 17:58:49.796] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[12gru2024 17:58:49.949] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[12gru2024 17:58:51.030] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[12gru2024 17:58:51.030] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[12gru2024 17:58:51.030] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[12gru2024 17:58:51.466] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 83%
+[12gru2024 17:58:51.495] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[12gru2024 17:58:51.500] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 1541 ms
+[12gru2024 17:58:51.546] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[12gru2024 17:58:51.547] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[12gru2024 17:58:51.581] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[12gru2024 17:58:51.904] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[12gru2024 17:58:51.940] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:2970d92d] logged in with entity id 1 at (-71.46311717799396, 56.0, -0.09054702677849502)
+[12gru2024 17:58:51.960] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[12gru2024 17:58:52.235] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 2 advancements
+[12gru2024 17:58:54.623] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] First position set at: -71, 55, 2
+[12gru2024 17:58:55.622] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Second position set at: -73, 55, 0
+[12gru2024 17:59:02.759] [Server thread/INFO] [com.dupayou.minearchitect.data.CreationData/]: Loading creation from NBT: {Blocks:[{Block:"minecraft:stone",Properties:{},X:0,Y:0,Z:0},{Block:"minecraft:stone",Properties:{},X:0,Y:1,Z:0},{Block:"minecraft:stone",Properties:{},X:1,Y:0,Z:0},{Block:"minecraft:dirt",Properties:{},X:1,Y:1,Z:0}],Name:"stonewall",SizeX:2,SizeY:2,SizeZ:1}
+[12gru2024 17:59:02.759] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Creation sandy saved]
+[12gru2024 17:59:02.765] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Creation sandy saved
+[12gru2024 17:59:07.163] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
+[12gru2024 17:59:07.165] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
+[12gru2024 17:59:07.227] [ForkJoinPool.commonPool-worker-1/INFO] [com.dupayou.minearchitect.utils.JsonBlockLoader/]: Finished saving blocks
+[12gru2024 17:59:07.287] [ForkJoinPool.commonPool-worker-2/INFO] [com.dupayou.minearchitect.utils.JsonBlockLoader/]: Finished saving blocks
+[12gru2024 17:59:07.944] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12gru2024 17:59:07.954] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12gru2024 17:59:07.957] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12gru2024 17:59:07.957] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12gru2024 17:59:29.328] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Second position set at: -74, 55, 4
+[12gru2024 17:59:37.102] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 13 advancements
+[12gru2024 17:59:46.626] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] First position set at: -70, 58, 0
+[12gru2024 17:59:49.679] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Second position set at: -68, 56, 0
+[12gru2024 18:00:00.265] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Creation siurak saved]
+[12gru2024 18:00:00.271] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Creation siurak saved
+[12gru2024 18:00:03.437] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
+[12gru2024 18:00:03.437] [Render thread/INFO] [com.dupayou.minearchitect.MineArchitect/]: P key pressed, placing blocks!
+[12gru2024 18:00:03.499] [ForkJoinPool.commonPool-worker-2/INFO] [com.dupayou.minearchitect.utils.JsonBlockLoader/]: Finished saving blocks
+[12gru2024 18:00:03.559] [ForkJoinPool.commonPool-worker-1/INFO] [com.dupayou.minearchitect.utils.JsonBlockLoader/]: Finished saving blocks
+[12gru2024 18:00:04.344] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12gru2024 18:00:04.346] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12gru2024 18:00:04.347] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12gru2024 18:00:04.347] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12gru2024 18:02:18.294] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[12gru2024 18:02:18.296] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12gru2024 18:02:18.297] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12gru2024 18:02:18.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12gru2024 18:02:20.796] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[12gru2024 18:02:20.796] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[12gru2024 18:02:20.798] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[12gru2024 18:02:20.845] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[12gru2024 18:02:20.845] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[12gru2024 18:02:20.845] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[12gru2024 18:02:21.037] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[12gru2024 18:02:21.058] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[12gru2024 18:02:21.058] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[12gru2024 18:02:21.066] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (New World): All chunks are saved
+[12gru2024 18:02:21.066] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12gru2024 18:02:21.066] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12gru2024 18:02:21.066] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[12gru2024 18:02:22.272] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!

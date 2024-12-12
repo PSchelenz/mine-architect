@@ -2,26 +2,19 @@ package com.dupayou.minearchitect;
 
 import com.dupayou.minearchitect.client.CreationPlacementHandler;
 import com.dupayou.minearchitect.client.CreationPreviewRenderer;
-import com.dupayou.minearchitect.data.CreationData;
-import com.dupayou.minearchitect.model.Creation;
-import com.dupayou.minearchitect.model.CreationBlock;
+import com.dupayou.minearchitect.commands.MineArchitectCommands;
+import com.dupayou.minearchitect.models.ArchitectsPencilItem;
 import com.dupayou.minearchitect.network.NetworkHandler;
-import com.dupayou.minearchitect.screens.CreationsScreen;
 import com.dupayou.minearchitect.screens.MenuScreen;
-import com.dupayou.minearchitect.utils.JsonBlockLoader;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.client.gui.screens.ChatScreen;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,12 +22,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
-
-import java.util.HashMap;
-import java.util.Map;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MineArchitect.MOD_ID)
@@ -45,6 +37,10 @@ public class MineArchitect
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+
+    public static final RegistryObject<Item> ARCHITECTS_PENCIL = ITEMS.register("architects_pencil", ArchitectsPencilItem::new);
+
     public MineArchitect(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -52,7 +48,10 @@ public class MineArchitect
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
 
+        ITEMS.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.addListener(this::onCommandsRegister);
 
         modEventBus.addListener(this::addCreative);
 
@@ -71,6 +70,10 @@ public class MineArchitect
         MinecraftForge.EVENT_BUS.register(CreationPlacementHandler.class);
     }
 
+    private void onCommandsRegister(RegisterCommandsEvent event) {
+        MineArchitectCommands.register(event.getDispatcher());
+    }
+
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
@@ -87,7 +90,9 @@ public class MineArchitect
     @SubscribeEvent
     public void onKeyInput(InputEvent.Key event)
     {
-        if (event.getKey() == GLFW.GLFW_KEY_P && event.getAction() == GLFW.GLFW_PRESS)
+        Minecraft mc = Minecraft.getInstance();
+
+        if (event.getKey() == GLFW.GLFW_KEY_P && event.getAction() == GLFW.GLFW_PRESS && !(mc.screen instanceof ChatScreen))
         {
             LOGGER.info("P key pressed, placing blocks!");
 
