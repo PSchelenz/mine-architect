@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Specification-Title: mine_architect
-Specification-Vendor: Dupayou
-Specification-Version: 1
-Implementation-Title: mine-architect-1.20.1
-Implementation-Version: 0.1-1.20.1
-Implementation-Vendor: Dupayou
-Implementation-Timestamp: 2024-09-16T18:25:03+0200
-
