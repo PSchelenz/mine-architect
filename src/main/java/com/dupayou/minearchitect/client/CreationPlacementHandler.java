@@ -4,9 +4,13 @@ import com.dupayou.minearchitect.models.Creation;
 import com.dupayou.minearchitect.network.NetworkHandler;
 import com.dupayou.minearchitect.network.PlaceCreationMessage;
 import com.dupayou.minearchitect.states.CreationPlacementState;
+import com.dupayou.minearchitect.utils.LandscapeObserver;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.lwjgl.glfw.GLFW;
@@ -19,15 +23,13 @@ public class CreationPlacementHandler {
         Creation activeCreation = CreationPlacementState.getActiveCreation();
         if (activeCreation == null) return;
 
-        Minecraft mc = Minecraft.getInstance();
-        if(mc.hitResult instanceof BlockHitResult hit) {
-            BlockPos pos = hit.getBlockPos().above();
-            BlockPos size = activeCreation.getSize();
-            pos = pos.offset(-size.getX() / 2, 0, -size.getZ() / 2);
+        // Get creation starting position
+        BlockPos pos = CreationPlacementState.toCenter();
 
-            NetworkHandler.INSTANCE.sendToServer(new PlaceCreationMessage(activeCreation.getName(), pos, CreationPlacementState.getRotation()));
-            CreationPlacementState.clearActiveCreation();
-        }
+        // Send the placement message
+        NetworkHandler.INSTANCE.sendToServer(new PlaceCreationMessage(
+                activeCreation.getName(), pos, CreationPlacementState.getRotation()));
+        CreationPlacementState.clearActiveCreation();
     }
 
     @SubscribeEvent

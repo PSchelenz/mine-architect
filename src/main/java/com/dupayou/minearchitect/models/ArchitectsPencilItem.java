@@ -2,7 +2,6 @@ package com.dupayou.minearchitect.models;
 
 import com.dupayou.minearchitect.states.PencilSelectionState;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
